@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAnalyze Provider</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color: white; !important" href="#">
+            MAnalyze Provider
+          </a>
+          <a class="navbar-brand" style="color: white; !important" href="#">Help</a>
+        </div>
+      </nav>
+      <br>
+    <div class="container">
+        <center>
+            <div class="row">
+                <div class="col-md-4">
+                    <select class="form-select" id="speciality" aria-label="Default select example">
+                        <option selected value="">Select Speciality</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Endocrinologist">Endocrinologist</option>
+                        </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="price" aria-label="Default select example">
+                        <option selected value="">Select Price Range</option>
+                        <option value="0-100">$0 - $100</option>
+                        <option value="100-500">$100 - $500</option>
+                        </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="rating" aria-label="Default select example">
+                        <option selected value="">Select Rating</option>
+                        <option value="1-2">1 - 2</option>
+                        <option value="2-3">2 - 3</option>
+                        <option value="3-4">3 - 4</option>
+                        <option value="4-5">4 - 5</option>
+                        </select>
+                        </div>
+                        </div>
+        </center>
+        <div class="row">
+            <div class="col-md-10">
+                <div id="container"></div>
+            </div>
+            <div class="col-md-2">
+                <br><br><br>
+                <div class="box">
+                    <h1 id="provider-count">NA</h1>
+                    <p>Number of Providers</p>
+                </div>
+                <div class="box">
+                    <h1 id="provider-cost">$1M</h1>
+                    <p>Current Estimated Cost</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Modified HTML -->
+    
+    <!-- Existing Bootstrap Modal -->
+    <div class="modal fade" id="providerModal" tabindex="-1" aria-labelledby="providerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="providerModalLabel">Provider Information</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Content will be dynamically added here -->
+          </div>
+          <div class="modal-footer">
+            <!-- Add provider button -->
+            <button type="button" class="btn btn-primary" id="addProviderButton">Add provider</button>
+            <!-- Compare provider button -->
+            <button type="button" class="btn btn-info" id="compareProviderButton">Compare provider</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Comparison Modal -->
+    <div class="modal fade" id="comparisonModal" tabindex="-1" aria-labelledby="comparisonModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg"> <!-- Use modal-lg for a larger modal -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="comparisonModalLabel">Provider Comparison</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Comparison content will be dynamically added here -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
+
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
